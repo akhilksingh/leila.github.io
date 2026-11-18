@@ -2,375 +2,529 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Leila Rahman | Luxury fashion client advisor, Seattle</title>
-<meta name="description" content="Leila Rahman is a luxury fashion client advisor in Seattle with a background in adult care, now learning to build with AI.">
+<meta name="description" content="Leila Rahman is a luxury fashion client advisor in Seattle with a background in adult care, now learning to build with AI. Open to new roles.">
+<meta name="theme-color" content="#F2F2F7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,400..700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /*
-    PHOTOS: put image files in assets/images/ with exactly these names
-    (lowercase, .jpg). Each one appears on the site as soon as it exists.
-      portrait.jpg   cover photo, tall (about 3:4), full length works best
-      care.jpg       "Adult care" chapter
-      fashion.jpg    "Luxury fashion" chapter
-      tech.jpg       "Technology and AI" chapter
-      dream.jpg      "An Adult Family Home" chapter
-  */
   :root {
-    --pearl: #F6F3EF;
-    --black: #000000;
-    --red: #C8102E;
+    --bg: #F2F2F7;
+    --card: #FFFFFF;
+    --ink: #1C1C1E;
+    --soft: #636366;
+    --line: rgba(60,60,67,0.14);
+    --pink: #D6103F;
     --wine: #5E0A1A;
-    --rose: #FF6F8B;
-    --grey: #6B6660;
-    --white: #FFFFFF;
-    --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
-    --text: "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
-    --gutter: clamp(1.25rem, 4.5vw, 4rem);
-    --gloss-red: linear-gradient(115deg, #5E0A1A 0%, #C8102E 32%, #FF6F8B 50%, #C8102E 66%, #5E0A1A 100%);
+    --tape: #FFD60A;
+    --green: #1E8E3E;
+    --r-lg: 32px;
+    --r-md: 22px;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif;
+    --serif: "Bodoni Moda", "Didot", Georgia, serif;
+    --shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 32px -12px rgba(0,0,0,0.14);
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
   body {
     margin: 0;
-    background: var(--pearl);
-    color: var(--black);
-    font-family: var(--text);
-    font-weight: 300;
-    font-size: clamp(1.05rem, 0.96rem + 0.35vw, 1.22rem);
-    line-height: 1.6;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   a { color: inherit; }
-  a:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
-  h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; }
-  p { margin: 0 0 1em; }
+  a:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; border-radius: 12px; }
+  h1, h2, h3, p { margin: 0; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .card { background: var(--card); border-radius: var(--r-lg); box-shadow: var(--shadow); }
+  svg.icon { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
-  /* Draft markers: these still need Leila's real details. */
-  .todo { background: rgba(200,16,46,0.12); border-bottom: 1px dashed var(--red); padding: 0 0.2em; }
-  .back .todo { background: rgba(255,255,255,0.18); border-bottom-color: var(--white); }
-
-  /* Photo frames. The image covers the frame; if the file is missing it
-     removes itself and the glossy placeholder underneath shows instead. */
-  .photo {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(160deg, #E9D6D2 0%, #C9B8B2 45%, #A8989A 100%);
-    box-shadow: 0 30px 60px -25px rgba(94,10,26,0.45);
-  }
-  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-  .photo-note {
-    position: absolute; left: 1rem; bottom: 1rem;
-    background: var(--black); color: var(--white);
-    padding: 0.4em 0.8em; font-size: 0.85rem; font-weight: 400;
-  }
-  /* the gloss: a diagonal band of light over every photo */
-  .photo::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.28) 45%, rgba(255,255,255,0) 58%);
-  }
-
-  .button {
-    display: inline-block;
-    padding: 0.9em 1.9em;
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    background: linear-gradient(180deg, #E8324F 0%, #C8102E 48%, #8E0B20 100%);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 12px 24px -10px rgba(142,11,32,0.7);
+  /* ---------- Floating nav pill ---------- */
+  .nav {
+    position: sticky; top: 12px; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    margin: 12px auto 0; max-width: 1040px; width: calc(100% - 40px);
+    padding: 8px 8px 8px 20px;
     border-radius: 999px;
+    background: rgba(255,255,255,0.72);
+    -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: var(--shadow);
   }
-  .button:hover { background: linear-gradient(180deg, #333 0%, #000 100%); }
+  .nav-name { font-weight: 700; text-decoration: none; letter-spacing: -0.01em; }
+  .nav-links { display: flex; align-items: center; gap: 4px; }
+  .nav-links a { text-decoration: none; font-size: 15px; font-weight: 500; padding: 10px 14px; border-radius: 999px; }
+  .nav-links a:hover { background: rgba(0,0,0,0.06); }
+  .nav-links a.nav-cta { background: var(--ink); color: #fff; }
+  .nav-links a.nav-cta:hover { background: var(--pink); }
 
-  /* ---------- Cover ---------- */
-  .cover {
-    position: relative;
-    min-height: 100vh;
-    display: flex; flex-direction: column;
-    overflow: hidden;
+  /* ---------- Hero ---------- */
+  .hero { display: grid; grid-template-columns: 7fr 5fr; gap: 16px; padding-top: 28px; align-items: stretch; }
+  .hello { padding: clamp(24px, 4vw, 44px); display: flex; flex-direction: column; justify-content: space-between; gap: 28px; overflow: hidden; }
+  .status {
+    align-self: flex-start; display: inline-flex; align-items: center; gap: 9px;
+    font-size: 14px; font-weight: 600; color: #14602A;
+    background: #E3F6E8; border-radius: 999px; padding: 8px 14px;
+  }
+  .status i { width: 9px; height: 9px; border-radius: 50%; background: var(--green); animation: pulse 2s ease-out infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(30,142,62,0.55); } 100% { box-shadow: 0 0 0 10px rgba(30,142,62,0); } }
+  .hello h1 {
+    font-family: var(--serif); font-style: italic; font-weight: 500;
+    font-optical-sizing: none; font-variation-settings: "opsz" 28;
+    font-size: clamp(3.4rem, 1.6rem + 7.4vw, 6.8rem); line-height: 0.92; letter-spacing: -0.02em;
+    background: linear-gradient(110deg, #5E0A1A 0%, #D6103F 35%, #FF6482 50%, #D6103F 65%, #5E0A1A 100%);
+    background-size: 220% 100%; background-position: 100% 0;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: sheen 2.2s cubic-bezier(.3,.6,.2,1) 0.2s both;
+    padding: 0 0.06em 0.1em 0;
+  }
+  @keyframes sheen { to { background-position: 0 0; } }
+  .hello-lead { margin-top: 18px; font-size: clamp(1.1rem, 1rem + 0.6vw, 1.4rem); line-height: 1.4; font-weight: 500; letter-spacing: -0.01em; max-width: 26em; }
+  .hello-sub { color: var(--soft); margin-top: 10px; max-width: 32em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    min-height: 50px; padding: 0 22px; border-radius: 999px;
+    font-weight: 600; text-decoration: none;
+    background: rgba(118,118,128,0.14); color: var(--ink);
+    transition: transform 0.15s ease;
+  }
+  .btn:active { transform: scale(0.96); }
+  .btn:hover { background: rgba(118,118,128,0.24); }
+  .btn-primary { background: linear-gradient(180deg, #F0325A 0%, #D6103F 55%, #B50C33 100%); color: #fff; box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 10px 22px -10px rgba(214,16,63,0.8); }
+  .btn-primary:hover { background: linear-gradient(180deg, #D6103F, #8E0B20); }
+
+  /* Portrait hanging from a hanger */
+  .hang { display: flex; flex-direction: column; align-items: center; transform-origin: 50% 12px; animation: swing 4.2s ease-in-out infinite alternate; }
+  @keyframes swing { from { transform: rotate(-1.6deg); } to { transform: rotate(1.6deg); } }
+  .hanger { width: 150px; height: 62px; margin-bottom: -6px; position: relative; z-index: 2; fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .portrait {
+    position: relative; width: 100%; flex: 1; min-height: 380px; overflow: hidden;
+    border-radius: var(--r-lg);
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(150deg, #5E0A1A 0%, #D6103F 45%, #FF6482 62%, #8E0B20 100%);
+    box-shadow: 0 24px 44px -20px rgba(94,10,26,0.6);
+  }
+  .portrait span { font-family: var(--serif); font-style: italic; font-optical-sizing: none; font-variation-settings: "opsz" 28; font-size: 8rem; color: #fff; line-height: 1; }
+  /* Sliding photos inside the hanging card (the LR plate shows until a photo loads) */
+  .slides { position: absolute; inset: 0; display: flex; transition: transform 0.9s cubic-bezier(.65,0,.2,1); }
+  .slides img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+  .dots { position: absolute; z-index: 3; left: 0; right: 0; bottom: 14px; display: flex; justify-content: center; gap: 7px; }
+  .dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(255,255,255,0.55); cursor: pointer; transition: width 0.3s ease, background 0.3s ease; box-shadow: 0 0 0 1px rgba(0,0,0,0.12); }
+  .dots button.on { width: 22px; background: #fff; }
+  .dots button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  .portrait::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(120deg, rgba(255,255,255,0) 32%, rgba(255,255,255,0.24) 46%, rgba(255,255,255,0) 58%); }
+
+  /* ---------- Widgets ---------- */
+  .widgets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+  .widget { border-radius: var(--r-md); padding: 18px; display: flex; flex-direction: column; gap: 22px; min-height: 148px; justify-content: space-between; }
+  .widget-icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff; flex-shrink: 0; }
+  .widget small { display: block; font-size: 13px; font-weight: 600; color: var(--soft); }
+  .widget strong { display: block; font-size: 18px; line-height: 1.2; letter-spacing: -0.01em; margin-top: 2px; }
+  .i-pink { background: linear-gradient(160deg, #F0325A, #B50C33); }
+  .i-ink { background: linear-gradient(160deg, #48484A, #1C1C1E); }
+  .i-blue { background: linear-gradient(160deg, #2A8CE0, #0A4FA8); }
+  .i-gold { background: linear-gradient(160deg, #D98A1F, #A85800); }
+
+  /* ---------- Measuring tape ---------- */
+  .tape { margin: 30px 0 22px; overflow: hidden; background: var(--tape); border-top: 1px solid rgba(0,0,0,0.15); border-bottom: 1px solid rgba(0,0,0,0.15); transform: rotate(-1.2deg) scale(1.03); }
+  .tape-track { display: flex; width: max-content; animation: tape 30s linear infinite; }
+  .tape-unit {
+    width: 80px; height: 46px; flex-shrink: 0; position: relative;
     background:
-      radial-gradient(60rem 40rem at 85% 10%, rgba(255,111,139,0.35), transparent 60%),
-      radial-gradient(50rem 36rem at 5% 90%, rgba(200,16,46,0.18), transparent 60%),
-      linear-gradient(180deg, #FFFFFF 0%, #F6F3EF 55%, #EFE4E1 100%);
+      linear-gradient(#1C1C1E, #1C1C1E) 0 0 / 2px 22px no-repeat,
+      linear-gradient(#1C1C1E, #1C1C1E) 20px 0 / 1px 10px no-repeat,
+      linear-gradient(#1C1C1E, #1C1C1E) 40px 0 / 1.5px 15px no-repeat,
+      linear-gradient(#1C1C1E, #1C1C1E) 60px 0 / 1px 10px no-repeat;
+    font-size: 15px; font-weight: 700; color: #1C1C1E;
   }
-  .strip {
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.25rem 1.5rem;
-    padding: 1.1rem var(--gutter) 0;
-    font-size: 0.92rem; font-weight: 400;
-  }
-  .strip nav { display: flex; gap: 1.6rem; }
-  .strip a { text-decoration: none; }
-  .strip a:hover { color: var(--red); }
+  .tape-unit::after { content: attr(data-n); position: absolute; left: 7px; bottom: 5px; }
+  @keyframes tape { to { transform: translateX(-50%); } }
 
-  .masthead {
-    text-align: center;
-    font-weight: 700;
-    font-size: 11.4vw;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    white-space: nowrap;
-    padding: 0.04em 0 0;
-    background: var(--gloss-red);
-    background-size: 220% 100%;
-    background-position: 100% 0;
-    -webkit-background-clip: text; background-clip: text;
-    color: transparent;
-    animation: sheen 2.4s cubic-bezier(.3,.6,.2,1) 0.3s both;
-  }
-  .masthead span { display: inline; }
-  @keyframes sheen { from { background-position: 100% 0; } to { background-position: 0% 0; } }
+  /* ---------- Sections ---------- */
+  section { padding-top: 24px; }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 0 6px 14px; }
+  .head h2 { font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.3rem); font-weight: 800; letter-spacing: -0.03em; }
+  .head p { color: var(--soft); font-size: 15px; }
 
-  .cover-body {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr minmax(16rem, 27rem) 1fr;
-    gap: clamp(1.5rem, 3.5vw, 3.5rem);
-    align-items: center;
-    padding: 0 var(--gutter) clamp(2rem, 4vw, 3rem);
-  }
-  .cover-photo { aspect-ratio: 3 / 4; margin-top: -1.4vw; align-self: start; }
-  .lines { display: flex; flex-direction: column; gap: clamp(1.5rem, 3vw, 2.5rem); }
-  .lines-right { text-align: right; align-items: flex-end; }
-  .line h2 { font-size: clamp(1.7rem, 1.1rem + 1.9vw, 2.75rem); line-height: 1.04; }
-  .line h2.small { font-size: clamp(1.35rem, 1rem + 1vw, 1.95rem); font-style: italic; }
-  .line p { margin: 0.5rem 0 0; max-width: 19em; font-size: 1.02rem; }
-  .line-red h2 {
-    background: var(--gloss-red); -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .rule { width: 100%; border-top: 3px solid var(--black); padding-top: 1.1rem; }
+  /* Story: four cards joined by a line of stitching */
+  .stitch { position: relative; height: 22px; margin: 0 6px 10px; }
+  .stitch-line { position: absolute; left: 0; right: 0; top: 10px; border-top: 3px dashed var(--pink); clip-path: inset(0 100% 0 0); transition: clip-path 2.4s cubic-bezier(.4,.1,.2,1); }
+  .needle { position: absolute; top: 0; left: 0; width: 44px; height: 22px; stroke: var(--ink); fill: none; stroke-width: 2; stroke-linecap: round; transition: left 2.4s cubic-bezier(.4,.1,.2,1); }
+  .story.sewn .stitch-line { clip-path: inset(0 0 0 0); }
+  .story.sewn .needle { left: calc(100% - 44px); }
+  .chapters { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .chapter { border-radius: var(--r-md); padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .chapter small { font-size: 13px; font-weight: 700; color: var(--pink); }
+  .chapter h3 { font-size: 21px; line-height: 1.15; letter-spacing: -0.02em; }
+  .chapter p { color: var(--soft); font-size: 15.5px; }
+  .chapter-next { background: linear-gradient(160deg, #1C1C1E 0%, #3A0A14 100%); color: #fff; }
+  .chapter-next small { color: #FF8FA6; }
+  .chapter-next p { color: #D9D9DE; }
 
-  /* ---------- Inside: the feature ---------- */
-  .feature { background: var(--white); padding: clamp(3.5rem, 8vw, 7rem) var(--gutter); }
-  .feature-head { max-width: 46rem; margin-bottom: clamp(2.5rem, 6vw, 5rem); }
-  .feature-head h2 { font-size: clamp(2.4rem, 1.4rem + 4.5vw, 5.4rem); line-height: 1; letter-spacing: -0.015em; }
-  .feature-head p { margin-top: 1.25rem; font-size: 1.2em; max-width: 30em; }
+  /* Approach: an inset list, like a settings screen */
+  .list { overflow: hidden; }
+  .row { display: flex; gap: 16px; align-items: flex-start; padding: 18px 20px; }
+  .row + .row { border-top: 1px solid var(--line); }
+  .row h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+  .row p { color: var(--soft); font-size: 15.5px; }
+  .row .widget-icon { width: 36px; height: 36px; border-radius: 10px; }
+  .row .widget-icon svg { width: 20px; height: 20px; }
 
-  .chapter {
-    display: grid;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
-    gap: clamp(1.5rem, 5vw, 5rem);
-    align-items: center;
-    padding: clamp(2rem, 5vw, 4rem) 0;
-    border-top: 1px solid rgba(0,0,0,0.18);
+  /* Contact */
+  .contact { padding: clamp(24px, 4vw, 44px); display: grid; grid-template-columns: 1fr 1fr; gap: 28px 40px; align-items: center; background: linear-gradient(140deg, #FFFFFF 0%, #FFF0F3 100%); }
+  .contact h2 { font-size: clamp(2rem, 1.3rem + 2.8vw, 3.2rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; }
+  .contact-note { color: var(--soft); margin-top: 14px; max-width: 28em; }
+  .roles { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+  .roles li { font-size: 14px; font-weight: 600; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 7px 13px; }
+  .reach { display: flex; flex-direction: column; gap: 10px; }
+  .reach a {
+    display: flex; align-items: center; gap: 14px; text-decoration: none;
+    background: #fff; border-radius: 18px; padding: 14px 16px; min-height: 64px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 6px 16px -10px rgba(0,0,0,0.2);
+    transition: transform 0.15s ease;
   }
-  .chapter:nth-of-type(even) .photo { order: 2; }
-  .chapter .photo { aspect-ratio: 4 / 5; }
-  .chapter-num {
-    font-family: var(--display); font-weight: 700; font-size: clamp(4rem, 2rem + 8vw, 9rem); line-height: 0.8;
-    background: var(--gloss-red); -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .chapter-when { margin: 1.2rem 0 0.2rem; font-weight: 400; color: var(--grey); }
-  .chapter h3 { font-size: clamp(2rem, 1.3rem + 2.6vw, 3.6rem); line-height: 1.02; margin-bottom: 1rem; }
-  .chapter p { max-width: 30em; }
-  .chapter-dream h3 { font-style: italic; }
+  .reach a:hover { transform: translateY(-2px); }
+  .reach a:active { transform: scale(0.98); }
+  .reach b { display: block; font-size: 16px; }
+  .reach .way-note { display: block; font-size: 14px; color: var(--soft); }
+  .reach .chev { margin-left: auto; color: #8E8E93; }
+  .reach a.reach-main { background: linear-gradient(180deg, #F0325A 0%, #D6103F 55%, #B50C33 100%); color: #fff; }
+  .reach a.reach-main .way-note, .reach a.reach-main .chev { color: #FFFFFF; }
+  .reach a.reach-main .widget-icon { background: rgba(255,255,255,0.22); }
 
-  /* ---------- Rules: glossy black spread ---------- */
-  .rules {
-    color: var(--white);
-    padding: clamp(3.5rem, 8vw, 7rem) var(--gutter);
-    background:
-      radial-gradient(55rem 30rem at 15% 0%, rgba(200,16,46,0.55), transparent 65%),
-      radial-gradient(40rem 26rem at 95% 100%, rgba(255,111,139,0.25), transparent 65%),
-      linear-gradient(180deg, #1A0206 0%, #000000 70%);
-  }
-  .rules h2 { font-size: clamp(2.4rem, 1.4rem + 4.5vw, 5.4rem); line-height: 1; max-width: 12em; }
-  .rules-list {
-    list-style: none; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding: 0;
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;
-  }
-  .rules-list li {
-    padding: 1.75rem 1.5rem 1.5rem;
-    border: 1px solid rgba(255,255,255,0.28);
-    background: linear-gradient(160deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.03) 45%, rgba(255,255,255,0.08) 100%);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
-  }
-  .rules-list h3 { font-size: 1.7rem; line-height: 1.1; margin-bottom: 0.7rem; }
-  .rules-list p { margin: 0; font-size: 1rem; }
+  footer { text-align: center; color: var(--soft); font-size: 13px; padding: 28px 20px 40px; }
 
-  /* ---------- Back cover: contact ---------- */
-  .back {
-    color: var(--white);
-    text-align: center;
-    padding: clamp(4.5rem, 11vw, 9rem) var(--gutter) clamp(3rem, 6vw, 5rem);
-    background: linear-gradient(125deg, #5E0A1A 0%, #C8102E 38%, #FF6F8B 55%, #C8102E 72%, #5E0A1A 100%);
-  }
-  .back h2 { font-size: clamp(2.8rem, 1.2rem + 8vw, 9rem); line-height: 0.95; letter-spacing: -0.02em; }
-  .back p { margin: 1.5rem auto 0; max-width: 32em; font-weight: 400; }
-  .back-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2.5rem; }
-  .back-links a {
-    text-decoration: none; font-weight: 500; padding: 0.85em 1.8em; border-radius: 999px;
-    background: var(--white); color: var(--wine);
-    box-shadow: 0 14px 28px -12px rgba(0,0,0,0.6);
-  }
-  .back-links a:hover { background: var(--black); color: var(--white); }
-  .back-links a:focus-visible { outline-color: var(--white); }
-  .smallprint { margin-top: 3.5rem; font-size: 0.9rem; font-weight: 400; }
+  /* ---------- Tab bar (phones) ---------- */
+  .tabs { display: none; }
 
-  @media (max-width: 900px) {
-    .cover-body { grid-template-columns: 1fr 1fr; }
-    .cover-photo { grid-column: 1 / -1; grid-row: 1; width: min(100%, 24rem); justify-self: center; }
-    .rules-list { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .hang { max-width: 360px; margin: 0 auto; width: 100%; }
+    .widgets, .chapters { grid-template-columns: repeat(2, 1fr); }
+    .contact { grid-template-columns: 1fr; }
   }
   @media (max-width: 640px) {
-    .strip nav { display: none; }
-    .masthead { font-size: 19.5vw; line-height: 0.9; white-space: normal; }
-    .masthead span { display: block; }
-    .cover-body { grid-template-columns: 1fr; }
-    .cover-photo { margin-top: 0.5rem; }
-    .lines-right { text-align: left; align-items: flex-start; }
-    .chapter { grid-template-columns: 1fr; }
-    .chapter:nth-of-type(even) .photo { order: 0; }
-    .rules-list { grid-template-columns: 1fr; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .head p { display: none; }
+    .widget { min-height: 132px; padding: 16px; }
+    .widget strong { font-size: 16px; }
+    .chapters { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -20px; padding: 0 20px 14px; scrollbar-width: none; }
+    .chapters::-webkit-scrollbar { display: none; }
+    .chapter { flex: 0 0 78%; scroll-snap-align: center; }
+    footer { padding-bottom: 120px; }
+    .tabs {
+      position: fixed; z-index: 30; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      padding: 6px; border-radius: 28px;
+      background: rgba(255,255,255,0.78);
+      -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+      border: 1px solid rgba(255,255,255,0.7);
+      box-shadow: 0 10px 30px -8px rgba(0,0,0,0.3);
+    }
+    .tabs a { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 4px; min-height: 52px; text-decoration: none; font-size: 11px; font-weight: 600; color: var(--soft); border-radius: 22px; }
+    .tabs a.on { color: var(--pink); background: rgba(214,16,63,0.09); }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .masthead { animation: none; background-position: 0 0; }
+    .hang, .tape-track, .status i { animation: none; }
+    .hello h1 { animation: none; background-position: 0 0; }
+    .stitch-line, .needle, .slides { transition: none; }
   }
 </style>
 </head>
 <body>
 
-<header class="cover" id="top">
-  <div class="strip">
-    <span>Seattle, Washington</span>
-    <nav aria-label="Sections">
-      <a href="#story">Story</a>
-      <a href="#rules">Approach</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <span>Luxury fashion client advisor</span>
+<nav class="nav" aria-label="Main">
+  <a class="nav-name" href="#top">Leila Rahman</a>
+  <div class="nav-links">
+    <a href="#story">Story</a>
+    <a href="#approach">Approach</a>
+    <a class="nav-cta" href="#contact">Hire me</a>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+
+  <div class="hero">
+    <div class="card hello">
+      <span class="status"><i></i>Open to new roles</span>
+      <div>
+        <h1>Leila Rahman</h1>
+        <p class="hello-lead">Luxury fashion client advisor in Seattle, with a caregiver's eye for what people need.</p>
+        <p class="hello-sub">I advise clients at Celine, I am learning to build with AI, and one day I will open an Adult Family Home of my own.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="#contact">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          Get in touch
+        </a>
+        <a class="btn" href="#story">See my story</a>
+      </div>
+    </div>
+
+    <div class="hang">
+      <svg class="hanger" viewBox="0 0 150 62" aria-hidden="true"><path d="M75 4v6a7 7 0 1 0 7 7c0 7-7 6-7 14L10 54c-4 2-3 6 2 6h126c5 0 6-4 2-6L75 31"/></svg>
+      <div class="portrait">
+        <span aria-hidden="true">LR</span>
+        <div class="slides" id="slides"></div>
+        <div class="dots" id="dots"></div>
+      </div>
+    </div>
   </div>
 
-  <h1 class="masthead"><span>Leila</span> <span>Rahman</span></h1>
-
-  <div class="cover-body">
-    <div class="lines">
-      <div class="line">
-        <h2>From caregiver to client advisor</h2>
-        <p>How looking after people became a career in luxury fashion at Celine.</p>
-      </div>
-      <div class="line">
-        <h2 class="small">The art of remembering every client</h2>
-        <p>Four rules for service that people come back for.</p>
-      </div>
+  <div class="widgets">
+    <div class="card widget">
+      <span class="widget-icon i-pink"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l1.5 12h-15z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span>
+      <span><small>Today</small><strong>Client advisor at Celine</strong></span>
     </div>
-
-    <div class="photo cover-photo">
-      <span class="photo-note">Add assets/images/portrait.jpg</span>
-      <img src="assets/images/portrait.jpg" alt="Portrait of Leila Rahman" onerror="this.remove()">
+    <div class="card widget">
+      <span class="widget-icon i-ink"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
+      <span><small>Before</small><strong>Adult caregiver</strong></span>
     </div>
-
-    <div class="lines lines-right">
-      <div class="line">
-        <h2>Learning to build with AI</h2>
-        <p>Why a fashion advisor is teaching herself technology.</p>
-      </div>
-      <div class="line line-red rule">
-        <h2 class="small">Next: an Adult Family Home of her own</h2>
-      </div>
-      <a class="button" href="#story">Read her story</a>
+    <div class="card widget">
+      <span class="widget-icon i-blue"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16v4M17 18h4"/></svg></span>
+      <span><small>Learning</small><strong>Building with AI</strong></span>
+    </div>
+    <div class="card widget">
+      <span class="widget-icon i-gold"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/><path d="M10 20v-6h4v6"/></svg></span>
+      <span><small>The dream</small><strong>An Adult Family Home</strong></span>
     </div>
   </div>
-</header>
-
-<main>
-
-  <section class="feature" id="story">
-    <div class="feature-head">
-      <h2>The story so far, in her words</h2>
-      <p>Three kinds of work, and the one I am building toward.</p>
-    </div>
-
-    <article class="chapter">
-      <div class="photo">
-        <span class="photo-note">Add assets/images/care.jpg</span>
-        <img src="assets/images/care.jpg" alt="" onerror="this.remove()">
-      </div>
-      <div>
-        <div class="chapter-num" aria-hidden="true">1</div>
-        <p class="chapter-when"><span class="todo">Years</span></p>
-        <h3>Adult care</h3>
-        <p>I cared for adults who needed daily support <span class="todo">where, and for how long</span>. I learned patience, how to read what someone needs before they say it, and how to earn trust slowly.</p>
-      </div>
-    </article>
-
-    <article class="chapter">
-      <div class="photo">
-        <span class="photo-note">Add assets/images/fashion.jpg</span>
-        <img src="assets/images/fashion.jpg" alt="" onerror="this.remove()">
-      </div>
-      <div>
-        <div class="chapter-num" aria-hidden="true">2</div>
-        <p class="chapter-when"><span class="todo">Year</span> to today</p>
-        <h3>Luxury fashion</h3>
-        <p>At Celine I work as a <span class="todo">job title</span>, advising clients on ready-to-wear, leather goods and accessories. <span class="todo">One or two real results: repeat clients, sales ranking, an award.</span></p>
-      </div>
-    </article>
-
-    <article class="chapter">
-      <div class="photo">
-        <span class="photo-note">Add assets/images/tech.jpg</span>
-        <img src="assets/images/tech.jpg" alt="" onerror="this.remove()">
-      </div>
-      <div>
-        <div class="chapter-num" aria-hidden="true">3</div>
-        <p class="chapter-when">Now</p>
-        <h3>Technology and AI</h3>
-        <p>I am teaching myself to use AI tools to plan, write and build. <span class="todo">Courses taken, tools used, a first project.</span> This website is part of that learning.</p>
-      </div>
-    </article>
-
-    <article class="chapter chapter-dream">
-      <div class="photo">
-        <span class="photo-note">Add assets/images/dream.jpg</span>
-        <img src="assets/images/dream.jpg" alt="" onerror="this.remove()">
-      </div>
-      <div>
-        <div class="chapter-num" aria-hidden="true">4</div>
-        <p class="chapter-when">Next</p>
-        <h3>An Adult Family Home</h3>
-        <p>A small, licensed home where adults who need daily care are known by name and treated with the same attention I give every client today. Everything I am learning goes toward opening it.</p>
-      </div>
-    </article>
-  </section>
-
-  <section class="rules" id="rules">
-    <h2>Four rules I never break with a client</h2>
-    <ul class="rules-list">
-      <li>
-        <h3>Listen first</h3>
-        <p>I ask about the occasion, the wardrobe and the person before I show a single piece.</p>
-      </li>
-      <li>
-        <h3>Remember the details</h3>
-        <p>Sizes, preferences, birthdays, the bag someone almost bought last spring.</p>
-      </li>
-      <li>
-        <h3>Never rush a decision</h3>
-        <p>A client who takes their time and loves what they chose always comes back.</p>
-      </li>
-      <li>
-        <h3>Follow up</h3>
-        <p>The relationship starts at the sale. I check in, and I let people know when something arrives that suits them.</p>
-      </li>
-    </ul>
-  </section>
 
 </main>
 
-<footer class="back" id="contact">
-  <h2>Write to Leila</h2>
-  <p>I am open to roles in luxury retail and client relations, and to conversations with anyone working where care and technology meet.</p>
-  <div class="back-links">
-    <a href="mailto:EMAIL-HERE"><span class="todo">Email address</span></a>
-    <a href="#"><span class="todo">LinkedIn</span></a>
-    <a href="https://github.com/LeilaRahman">GitHub</a>
-  </div>
-  <p class="smallprint">Leila Rahman, Seattle, Washington. This is a personal site and is not affiliated with Celine.</p>
-</footer>
+<div class="tape" aria-hidden="true"><div class="tape-track" id="tape"></div></div>
+
+<div class="wrap">
+
+  <section class="story" id="story">
+    <div class="head">
+      <h2>My story</h2>
+      <p>Three kinds of work, and the one I am building toward</p>
+    </div>
+    <div class="stitch" aria-hidden="true">
+      <div class="stitch-line"></div>
+      <svg class="needle" viewBox="0 0 44 22"><path d="M2 11h36l4-2"/><ellipse cx="7" cy="11" rx="3" ry="1.3"/></svg>
+    </div>
+    <div class="chapters">
+      <article class="card chapter">
+        <small>Where it began</small>
+        <h3>Adult care</h3>
+        <p>I cared for adults who needed daily support. I learned patience, how to read what someone needs before they say it, and how to earn trust slowly.</p>
+      </article>
+      <article class="card chapter">
+        <small>Today</small>
+        <h3>Luxury fashion</h3>
+        <p>At Celine I advise clients on ready-to-wear, leather goods and accessories. I notice the person, remember what matters to them, and earn their trust.</p>
+      </article>
+      <article class="card chapter">
+        <small>Now</small>
+        <h3>Technology and AI</h3>
+        <p>I am teaching myself to use AI tools to plan, write and build. This website is part of that learning.</p>
+      </article>
+      <article class="card chapter chapter-next">
+        <small>Next</small>
+        <h3>An Adult Family Home</h3>
+        <p>A small, licensed home where adults who need daily care are known by name. Everything I am learning goes toward opening it.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="head">
+      <h2>How I work</h2>
+      <p>Four rules I never break with a client</p>
+    </div>
+    <div class="card list">
+      <div class="row">
+        <span class="widget-icon i-pink"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13a7 7 0 0 1 14 0"/><path d="M5 13h3v6H7a2 2 0 0 1-2-2zM19 13h-3v6h1a2 2 0 0 0 2-2z"/></svg></span>
+        <div><h3>Listen first</h3><p>I ask about the occasion, the wardrobe and the person before I show a single piece.</p></div>
+      </div>
+      <div class="row">
+        <span class="widget-icon i-ink"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16l-6-4-6 4z"/></svg></span>
+        <div><h3>Remember the details</h3><p>Sizes, preferences, birthdays, the bag someone almost bought last spring.</p></div>
+      </div>
+      <div class="row">
+        <span class="widget-icon i-blue"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span>
+        <div><h3>Never rush a decision</h3><p>A client who takes their time and loves what they chose always comes back.</p></div>
+      </div>
+      <div class="row">
+        <span class="widget-icon i-gold"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v10H10l-5 4z"/></svg></span>
+        <div><h3>Follow up</h3><p>The relationship starts at the sale. I check in, and I let people know when something arrives that suits them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card contact">
+      <div>
+        <h2>Hiring? Let's talk.</h2>
+        <p class="contact-note">I am open to new roles and happy to talk through my experience. Pick whichever way is easiest for you.</p>
+        <ul class="roles" aria-label="Roles I am interested in">
+          <li>Luxury retail</li>
+          <li>Client relations</li>
+          <li>Styling and clienteling</li>
+          <li>Care and technology</li>
+        </ul>
+      </div>
+      <div class="reach" id="reach"></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>Leila Rahman, Seattle, Washington. A personal site, not affiliated with Celine.</footer>
+
+<nav class="tabs" aria-label="Sections">
+  <a href="#top" class="on"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg>Home</a>
+  <a href="#story"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h6v14H5zM13 5h6v14h-6z"/></svg>Story</a>
+  <a href="#approach"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg>Approach</a>
+  <a href="#contact"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>Contact</a>
+</nav>
+
+<script>
+  /* ============================================================
+     LEILA'S CONTACT DETAILS: fill these in. Anything left empty
+     ("") is simply not shown on the page.
+     ============================================================ */
+  var CONTACT = {
+    email: "",        // e.g. "name@example.com"
+    phone: "",        // e.g. "+1 206 555 0100" (shown as Call or text)
+    linkedin: "",     // full link to her LinkedIn profile
+    instagram: "",    // full link, only if it is a professional account
+    resume: "",       // e.g. "assets/Leila-Rahman-Resume.pdf"
+    github: "https://github.com/LeilaRahman"
+  };
+
+  /* ============================================================
+     PHOTOS: files in assets/images that slide through the hanging
+     card, in this order. Add, remove or rename entries to match the
+     real file names (spelling and upper/lower case must be exact).
+     Files that do not exist are skipped.
+     ============================================================ */
+  var PHOTOS = [
+    "portrait.jpg",
+    "fashion.jpg",
+    "care.jpg",
+    "tech.jpg",
+    "dream.jpg",
+    "IMG_0245.JPG"
+  ];
+
+  var ICONS = {
+    email: '<path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/>',
+    phone: '<path d="M6 4h3l2 5-2 1a11 11 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 4 6a2 2 0 0 1 2-2z"/>',
+    linkedin: '<path d="M5 10v9M5 5.5v.01M10 19v-9M10 14a3.5 3.5 0 0 1 7 0v5"/>',
+    instagram: '<rect x="4" y="4" width="16" height="16" rx="5"/><circle cx="12" cy="12" r="3.5"/><path d="M17 7v.01"/>',
+    resume: '<path d="M7 3h7l4 4v14H7z"/><path d="M12 10v6m-3-3 3 3 3-3"/>',
+    github: '<path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/>'
+  };
+  var WAYS = [
+    ["email", "Email me", "Best for job opportunities", function (v) { return "mailto:" + v + "?subject=" + encodeURIComponent("Job opportunity for Leila"); }],
+    ["phone", "Call or text", CONTACT.phone, function (v) { return "tel:" + v.replace(/[^+\d]/g, ""); }],
+    ["linkedin", "LinkedIn", "Connect or send a message", null],
+    ["resume", "Download my resume", "PDF", null],
+    ["instagram", "Instagram", "See my styling work", null],
+    ["github", "GitHub", "What I am building", null]
+  ];
+  var reach = document.getElementById("reach");
+  var first = true;
+  WAYS.forEach(function (w) {
+    var value = CONTACT[w[0]];
+    if (!value) return;
+    var a = document.createElement("a");
+    a.href = w[3] ? w[3](value) : value;
+    if (!w[3] && w[0] !== "resume") { a.target = "_blank"; a.rel = "noopener"; }
+    if (first) { a.className = "reach-main"; first = false; }
+    a.innerHTML =
+      '<span class="widget-icon i-ink"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">' + ICONS[w[0]] + '</svg></span>' +
+      '<span><b></b><span class="way-note"></span></span>' +
+      '<svg class="icon chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>';
+    a.querySelector("b").textContent = w[1];
+    a.querySelector(".way-note").textContent = w[2];
+    reach.appendChild(a);
+  });
+
+  /* Measuring tape numbers (two identical halves so the loop is seamless) */
+  var tape = document.getElementById("tape");
+  for (var half = 0; half < 2; half++) {
+    for (var n = 1; n <= 30; n++) {
+      var u = document.createElement("div");
+      u.className = "tape-unit";
+      u.setAttribute("data-n", n);
+      tape.appendChild(u);
+    }
+  }
+
+  /* Sew the story line when it scrolls into view */
+  var story = document.querySelector(".story");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries, obs) {
+      if (entries[0].isIntersecting) { story.classList.add("sewn"); obs.disconnect(); }
+    }, { threshold: 0.35 }).observe(story);
+  } else { story.classList.add("sewn"); }
+
+  /* Sliding photos in the hanging card */
+  (function () {
+    var slides = document.getElementById("slides");
+    var dots = document.getElementById("dots");
+    var loaded = [];            // images that exist, kept in the order of PHOTOS
+    var current = 0, timer = null;
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function show(i) {
+      current = (i + loaded.length) % loaded.length;
+      slides.style.transform = "translateX(" + (-100 * current) + "%)";
+      Array.prototype.forEach.call(dots.children, function (d, n) { d.classList.toggle("on", n === current); });
+    }
+    function play() {
+      clearInterval(timer);
+      if (!still && loaded.length > 1) timer = setInterval(function () { show(current + 1); }, 3500);
+    }
+    function rebuild() {
+      slides.innerHTML = ""; dots.innerHTML = "";
+      loaded.sort(function (x, y) { return x.order - y.order; });
+      loaded.forEach(function (item, n) {
+        slides.appendChild(item.img);
+        if (loaded.length > 1) {
+          var d = document.createElement("button");
+          d.type = "button";
+          d.setAttribute("aria-label", "Show photo " + (n + 1));
+          d.onclick = function () { show(n); play(); };
+          dots.appendChild(d);
+        }
+      });
+      show(0); play();
+    }
+    PHOTOS.forEach(function (name, order) {
+      var img = new Image();
+      img.alt = order === 0 ? "Portrait of Leila Rahman" : "Leila Rahman, photo " + (order + 1);
+      img.onload = function () { loaded.push({ img: img, order: order }); rebuild(); };
+      img.src = "assets/images/" + name;
+    });
+    slides.parentNode.addEventListener("mouseenter", function () { clearInterval(timer); });
+    slides.parentNode.addEventListener("mouseleave", play);
+  })();
+
+  /* Highlight the current tab on phones */
+  var tabs = document.querySelectorAll(".tabs a");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        tabs.forEach(function (t) { t.classList.toggle("on", t.getAttribute("href") === "#" + e.target.id); });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    ["top", "story", "approach", "contact"].forEach(function (id) { io.observe(document.getElementById(id)); });
+  }
+</script>
 
 </body>
 </html>
